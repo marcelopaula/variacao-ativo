@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IData } from '../pages/variation-symbol/variation-symbol.types';
+import { IData } from '../pages/variation-symbol/variation-symbol.model';
 
 @Injectable({
   providedIn: 'root'

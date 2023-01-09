@@ -1,1 +1,17 @@
-<app-table-variation [dataSource]="dataTable"></app-table-variation>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Variação do ativo: <b>PETR4.SA</b></span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="wrapper">
+  <app-table-variation 
+    [dataSource]="dataTable">
+  </app-table-variation>
+  
+  <div class="divider"></div>
+
+  <app-graphic-variation 
+    [data]="dataGraphic">
+  </app-graphic-variation>
+</div>

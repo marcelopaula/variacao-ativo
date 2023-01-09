@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { PagesRoutingModule } from './pages-routing.module';
 import { ServicesModule } from '../services/services.module';
-import { HighchartsChartModule } from 'highcharts-angular';
 import { ComponentsModule } from '../components/components.module';
+import { MaterialModule } from '../material/material.module';
 
 import { VariationSymbolComponent } from './variation-symbol/variation-symbol.component';
 
@@ -17,8 +17,8 @@ import { VariationSymbolComponent } from './variation-symbol/variation-symbol.co
     CommonModule,
     PagesRoutingModule,
     ServicesModule,
-    HighchartsChartModule,
-    ComponentsModule
+    ComponentsModule,
+    MaterialModule
   ]
 })
 export class PagesModule { }

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ITableVariation } from '../table-variation/table-variation.types';
+import { ITableVariation } from './table-variation.model';
 
 @Component({
   selector: 'app-table-variation',

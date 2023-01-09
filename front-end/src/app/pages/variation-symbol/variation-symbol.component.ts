@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { VariationsService } from 'src/app/services/variations.service';
-import { IData } from './variation-symbol.types';
-import { ITableVariation } from 'src/app/components/table-variation/table-variation.types';
+import { IData } from './variation-symbol.model';
+import { ITableVariation } from 'src/app/components/table-variation/table-variation.model';
 import { format, fromUnixTime } from 'date-fns';
 
 @Component({
@@ -18,6 +18,7 @@ export class VariationSymbolComponent implements OnInit {
   timestampArr!: Array<string>;
 
   dataTable!: Array<ITableVariation>;
+  dataGraphic!: Array<number>; 
 
   calcVariation(n1: number, n2: number) {
     return n1 ? ((n2/n1)-1)*100 : 0;
@@ -36,7 +37,13 @@ export class VariationSymbolComponent implements OnInit {
       }
     });
     this.dataTable = result;
-    console.log(this.dataTable)
+  }
+  mountDataGraphic() {
+    const result: Array<number> = this.openValuesArr.map((value, i) => {
+      const lastDay = i === 0 ? i : i-1;
+      return  this.calcVariation(this.openValuesArr[lastDay].value, this.openValuesArr[i].value)
+    });
+    this.dataGraphic = result;
   }
 
   getValueAndTimestamp(data: IData) {
@@ -52,6 +59,7 @@ export class VariationSymbolComponent implements OnInit {
     });
 
     this.mountDataForTable();
+    this.mountDataGraphic();
   }
 
   ngOnInit(): void {
