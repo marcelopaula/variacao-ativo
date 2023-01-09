@@ -1,0 +1,16 @@
+{
+  "name": "variacao-ativo-angular",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "init-server": "cd ./bff && npm i && npm run start",
+    "init-front": "cd ./front-end && npm run install-and-start",
+    "start": "concurrently \"npm:init-*\""
+  },
+  "author": "Marcelo Araujo <marcelopaula.rj@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.6.0",
+  }
+}
